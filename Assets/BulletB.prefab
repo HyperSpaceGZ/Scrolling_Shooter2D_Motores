@@ -4876,7 +4876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletSpawnedTime: 0
-  BulletDespawnTime: 1.5
+  BulletDespawnTime: 2
   BulletSpeed: 15
 --- !u!1 &6076549278666984997
 GameObject:
@@ -4888,6 +4888,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8038907297284906780}
   - component: {fileID: 4124502416290309948}
+  - component: {fileID: 1012148480472038782}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -4962,3 +4963,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1012148480472038782
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6076549278666984997}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.034100205, y: -0.041969202}
+  serializedVersion: 2
+  m_Radius: 0.308515
