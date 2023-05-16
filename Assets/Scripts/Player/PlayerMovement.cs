@@ -116,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
         if (playerhealth < 10)
         {
             playerhealth++;
-            playerhealth++;
+            UIRefresh();
         }
     }
 
