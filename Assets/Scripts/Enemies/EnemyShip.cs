@@ -29,6 +29,11 @@ public class EnemyShip : MonoBehaviour
         {
             EnemyDeath();
         }
+        else if (collision.gameObject.tag == "Player")
+        {
+            EnemyDeath();
+        }
+
 
     }
     private void EnemyDeath()

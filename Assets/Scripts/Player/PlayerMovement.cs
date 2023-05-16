@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
     public int movementspeed;
+    public int playerhealth;
 
     public GameObject Bullet;
     public GameObject BulletA;
@@ -17,9 +20,11 @@ public class PlayerMovement : MonoBehaviour
     public float FireRate;
     private float NextFire;
 
+    public TMP_Text HPText;
+
     void Start()
     {
-
+        UIRefresh();
     }
 
     // Update is called once per frame
@@ -78,4 +83,41 @@ public class PlayerMovement : MonoBehaviour
             GameObject bulletCloneB = Instantiate(BulletB, BulletSpawnerFire2B.position, BulletSpawner.rotation);
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "enemybullet") 
+        {
+            Hit();
+        }
+        else if (collision.gameObject.tag == "enemy")
+        {
+            Hit();
+        }
+
+        if (collision.gameObject.tag == "HP")
+        {
+            UIRefresh();
+        }
+    }
+
+    private void Hit()
+    {
+        playerhealth--;
+        UIRefresh();
+    }
+    private void UIRefresh()
+    {
+        HPText.text = "HP:" + playerhealth;
+    }
+
+    public void AddHP()
+    {
+        if (playerhealth < 10)
+        {
+            playerhealth++;
+            playerhealth++;
+        }
+    }
+
 }
