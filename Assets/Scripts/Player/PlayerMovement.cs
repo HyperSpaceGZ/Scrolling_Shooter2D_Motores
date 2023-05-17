@@ -109,6 +109,10 @@ public class PlayerMovement : MonoBehaviour
     private void UIRefresh()
     {
         HPText.text = "HP:" + playerhealth;
+        if(playerhealth<1)
+        {
+            PlayerDeath();
+        }
     }
 
     public void AddHP()
@@ -118,6 +122,11 @@ public class PlayerMovement : MonoBehaviour
             playerhealth++;
             UIRefresh();
         }
+    }
+
+    private void PlayerDeath()
+    {
+        SceneManager.LoadScene("Death");
     }
 
 }
